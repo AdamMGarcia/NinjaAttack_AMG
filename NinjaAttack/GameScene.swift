@@ -113,11 +113,11 @@ class GameScene: SKScene {
     // displays enemies killed
     scoreLabel = SKLabelNode(fontNamed: "ScoreLabel")
     scoreLabel.name = scoreLabelName
-    scoreLabel.fontSize = 125
+    scoreLabel.fontSize = 30
     scoreLabel.fontColor = SKColor.black
 
     print(size.height)
-    scoreLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - 300)
+    scoreLabel.position = CGPoint(x: frame.size.width - 145, y: frame.size.height - 30)
     self.addChild(scoreLabel)
   }
   
@@ -224,7 +224,7 @@ class GameScene: SKScene {
     monster.removeFromParent()
     
     monstersDestroyed += 1
-    scoreLabel.text = "\(monstersDestroyed)" /////
+    scoreLabel.text = "Enemies killed: " + "\(monstersDestroyed)" /////
     print(monstersDestroyed)
     if monstersDestroyed > 30 {
       let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
