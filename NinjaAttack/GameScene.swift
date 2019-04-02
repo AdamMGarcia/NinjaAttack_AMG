@@ -95,7 +95,7 @@ class GameScene: SKScene {
         ])
     ))
     
-    let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
+    let backgroundMusic = SKAudioNode(fileNamed: "Old-town-road-short.mp3")
     backgroundMusic.autoplayLooped = true
     addChild(backgroundMusic)
   }
@@ -148,7 +148,7 @@ class GameScene: SKScene {
     guard let touch = touches.first else {
       return
     }
-    run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
+    run(SKAction.playSoundFileNamed("40_smith_wesson.wav", waitForCompletion: false))
     
     let touchLocation = touch.location(in: self)
     
