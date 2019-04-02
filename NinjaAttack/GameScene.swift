@@ -64,6 +64,10 @@ extension CGPoint {
   }
 }
 
+
+
+
+
 class GameScene: SKScene {
   
   struct PhysicsCategory {
@@ -74,8 +78,14 @@ class GameScene: SKScene {
   }
   
   // 1
-  let player = SKSpriteNode(imageNamed: "player")
+  let player = SKSpriteNode(imageNamed: "player-cowboy")
   var monstersDestroyed = 0
+  
+  // label for enemies killed
+  var scoreLabel = SKLabelNode()
+  let scoreLabelName = "scoreLabel"
+  var lastUpdateTime: TimeInterval?
+  
   
   override func didMove(to view: SKView) {
     // 2
@@ -98,7 +108,21 @@ class GameScene: SKScene {
     let backgroundMusic = SKAudioNode(fileNamed: "Old-town-road-short.mp3")
     backgroundMusic.autoplayLooped = true
     addChild(backgroundMusic)
+    
+    
+    // displays enemies killed
+    scoreLabel = SKLabelNode(fontNamed: "ScoreLabel")
+    scoreLabel.name = scoreLabelName
+    scoreLabel.fontSize = 125
+    scoreLabel.fontColor = SKColor.black
+    scoreLabel.text = "\(monstersDestroyed)"
+    print(size.height)
+    scoreLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - 300)
+    self.addChild(scoreLabel)
   }
+  
+  
+  
   
   func random() -> CGFloat {
     return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
@@ -108,9 +132,11 @@ class GameScene: SKScene {
     return random() * (max - min) + min
   }
   
+  
+  
   func addMonster() {
     // Create sprite
-    let monster = SKSpriteNode(imageNamed: "monster")
+    let monster = SKSpriteNode(imageNamed: "enemy-cowboy")
     
     monster.physicsBody = SKPhysicsBody(rectangleOf: monster.size) // 1
     monster.physicsBody?.isDynamic = true // 2
@@ -143,6 +169,8 @@ class GameScene: SKScene {
     monster.run(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
   }
   
+  
+  
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     // 1 - Choose one of the touches to work with
     guard let touch = touches.first else {
@@ -153,7 +181,7 @@ class GameScene: SKScene {
     let touchLocation = touch.location(in: self)
     
     // 2 - Set up initial location of projectile
-    let projectile = SKSpriteNode(imageNamed: "projectile")
+    let projectile = SKSpriteNode(imageNamed: "bullet")
     projectile.position = player.position
     
     projectile.physicsBody = SKPhysicsBody(circleOfRadius: projectile.size.width/2)
@@ -187,12 +215,16 @@ class GameScene: SKScene {
     projectile.run(SKAction.sequence([actionMove, actionMoveDone]))
   }
   
+  
+  
+  
   func projectileDidCollideWithMonster(projectile: SKSpriteNode, monster: SKSpriteNode) {
     print("Hit")
     projectile.removeFromParent()
     monster.removeFromParent()
     
     monstersDestroyed += 1
+    print(monstersDestroyed)
     if monstersDestroyed > 30 {
       let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
       let gameOverScene = GameOverScene(size: self.size, won: true)
