@@ -115,7 +115,7 @@ class GameScene: SKScene {
     scoreLabel.name = scoreLabelName
     scoreLabel.fontSize = 125
     scoreLabel.fontColor = SKColor.black
-    scoreLabel.text = "\(monstersDestroyed)"
+
     print(size.height)
     scoreLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - 300)
     self.addChild(scoreLabel)
@@ -224,6 +224,7 @@ class GameScene: SKScene {
     monster.removeFromParent()
     
     monstersDestroyed += 1
+    scoreLabel.text = "\(monstersDestroyed)" /////
     print(monstersDestroyed)
     if monstersDestroyed > 30 {
       let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
