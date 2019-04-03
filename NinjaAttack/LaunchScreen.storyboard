@@ -22,36 +22,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQV-xE-hgu">
-                                <rect key="frame" x="80" y="50" width="215" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="SQV-xE-hgu" secondAttribute="height" multiplier="215:72" id="ZCL-Br-D1D"/>
-                                </constraints>
+                                <rect key="frame" x="80.5" y="45" width="214" height="577"/>
                                 <string key="text">Ol' Town Road
 by Adam Garcia</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rw-logo" translatesAutoresizingMaskIntoConstraints="NO" id="skm-4Q-SEq">
-                                <rect key="frame" x="20" y="166" width="335" height="424"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="skm-4Q-SEq" secondAttribute="height" multiplier="335:424" id="ofd-s3-tkQ"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="thr-yb-z25" secondAttribute="trailing" id="0Yk-op-Sbr"/>
-                            <constraint firstItem="skm-4Q-SEq" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" id="6uZ-wP-D4M"/>
-                            <constraint firstItem="SQV-xE-hgu" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="30" id="98T-Wl-7og"/>
-                            <constraint firstItem="skm-4Q-SEq" firstAttribute="top" secondItem="SQV-xE-hgu" secondAttribute="bottom" constant="44" id="BP0-HZ-QUE"/>
-                            <constraint firstItem="SQV-xE-hgu" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="80" id="CQr-cw-VJN"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="skm-4Q-SEq" secondAttribute="bottom" constant="77" id="ETX-qv-9St"/>
+                            <constraint firstItem="SQV-xE-hgu" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="25" id="3z3-qz-dup"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="thr-yb-z25" secondAttribute="bottom" id="FXS-f4-xfH"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="SQV-xE-hgu" secondAttribute="trailing" constant="80.5" id="QjY-xt-DDg"/>
+                            <constraint firstItem="SQV-xE-hgu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Rbe-iY-mCY"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="bHm-5w-uXH"/>
+                            <constraint firstItem="SQV-xE-hgu" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="80.5" id="c8k-lE-h9J"/>
+                            <constraint firstItem="SQV-xE-hgu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kQI-9x-uve"/>
                             <constraint firstItem="thr-yb-z25" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="mnU-3N-lrW"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="SQV-xE-hgu" secondAttribute="trailing" constant="80" id="nBW-5e-hoC"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="skm-4Q-SEq" secondAttribute="trailing" constant="20" id="xEW-qh-kAE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
@@ -62,7 +51,6 @@ by Adam Garcia</string>
         </scene>
     </scenes>
     <resources>
-        <image name="rw-logo" width="450" height="600"/>
         <image name="rwdevcon-bg" width="1104" height="1104"/>
     </resources>
 </document>

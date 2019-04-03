@@ -37,7 +37,7 @@ class GameOverScene: SKScene {
     backgroundColor = SKColor.white
     
     // 2
-    let message = won ? "You Won!" : "You Lose :["
+    let message = won ? "Yee Haw Bruther! XD" : "sad yee haw :'("
     
     // 3
     let label = SKLabelNode(fontNamed: "Chalkduster")
